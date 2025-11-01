@@ -17,7 +17,7 @@ fi
 # Check SSL certificate status and days remaining
 check_ssl_status() {
     # First get domain from config file
-    if [ -f "/www/config.php" ]; then
+    if [ -f "/www/html/config.php" ]; then
         domain=$(grep '^\$domainhosts' "/www/html/config.php" | cut -d"'" -f2 | cut -d'/' -f1)
 
         if [ -n "$domain" ] && [ -f "/etc/letsencrypt/live/$domain/cert.pem" ]; then
