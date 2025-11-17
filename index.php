@@ -1327,7 +1327,7 @@ $textconnect
     ]);
     unlink($urlimage);
     if ($marzban_list_get['type'] == "WGDashboard") {
-        $urlimage = "wg-{$nameloc['username']}.conf";
+        $urlimage = "{$marzban_list_get['inboundid']}_{$nameloc['username']}.conf";
         file_put_contents($urlimage, $DataUserOut['subscription_url']);
         sendDocument($from_id, $urlimage, "⚙️ کانفیگ شما");
         unlink($urlimage);
